@@ -10,7 +10,8 @@ leaderboard with opt-out feature for public recognition
 has to be credit card or e-check
 refund system? just in case, yes
 police the system
-
+make a quiz for which kind of charity you should donate to
+featured charities
 
 use guidestar api
 
@@ -21,3 +22,5 @@ need to target baby boomers who aren't tech savy, don't trust/understand apps - 
 outreach also important, who cares if no one uses it
 cluster sort types of charities
 seller trust, rating system like uber
+make charities apply to be in it for extra credibility
+
