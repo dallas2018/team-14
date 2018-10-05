@@ -1,0 +1,7 @@
+from q and a
+think about local events 
+need to target baby boomers who aren't tech savy, don't trust/understand apps
+integration with existing marketplaces
+ability to make purchase + add donation in same transaction
+
+gamification - have categories of charities, achievements based on how much donated to which kind of charities
