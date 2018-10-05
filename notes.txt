@@ -6,6 +6,8 @@ sell services as well
 how are we going to get this in people? have people inventory their house, then encourage to give to charity? social aspect, collision of buyers and sellers, appeal to chairity minded people, looking for disruption, how to defend it from others?
 how to convince people this is legit? marketing keep reinforcing through ui/ux where proceeds go
 no rewards for customers 
+leaderboard with opt-out feature for public recognition
+has to be credit card or e-check
 
 use guidestar api
 
