@@ -1,6 +1,6 @@
 from q and a
 think about local events 
-integration with existing marketplaces
+integration with existing marketplaces (hooooow)
 ability to make purchase + add donation in same transaction
 sell services as well
 
@@ -9,3 +9,4 @@ sell services as well
 my ideas:
 gamification - have categories of charities, achievements based on how much donated to which kind of charities
 need to target baby boomers who aren't tech savy, don't trust/understand apps - can't rely on just kids selling their stuff
+outreach also important, who cares if no one uses it
