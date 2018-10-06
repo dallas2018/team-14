@@ -16,21 +16,21 @@
         <div class="informationBlock">
             <div>
                 <h1>
-                    Product Name: <input type = "text" name = "product name">
+                    Product Name: <input id = "productName" type = "text" name = "product name">
                 </h1>
                 
                 <h3>
-                    Item Tags: <input type = "text" name = "item tags"> 
-                    Charity: <input type = "text" name = "Charity"></h3> <!-- Type--> <!-- Charity Name-->
+                    Item Tags: <input id = "itemTags" type = "text" name = "item tags"> 
+                    Charity: <input id = "charity" type = "text" name = "Charity"></h3> <!-- Type--> <!-- Charity Name-->
 
                 <h4>
-                    Seller: <input type = "text" name = "seller"> 
+                    Seller: <input id = "seller" type = "text" name = "seller"> 
                 </h4> <!-- Seller -->
 
-                <p>Quality: <input type = "text" name = "quality"></p> <!-- Rating -->
+                <p>Quality: <input id = "quality" type = "text" name = "quality"></p> <!-- Rating -->
             </div>
             <div class="informationBlock price">
-                <h2> Pricing: <input type = "text" name = "price"></h2> <!-- Price of Item-->
+                <h2> Pricing: <input id = "pricingvvar productName = document.getElementById("productName");" type = "text" name = "price"></h2> <!-- Price of Item-->
             </div>
         </div>
     </div>
@@ -45,8 +45,9 @@
         </ul>
     </div>
 
-    <input type="text" name="firstname">
-    <input type="submit" value="Submit">
+    <input id = "mainText" type="text" name="firstname">
+    <input id = "submit" onClick = "submitClick()" type="submit" value="Submit">
+
 
     
     
