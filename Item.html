@@ -29,6 +29,11 @@
     <!-- Custom styles for this template-->
     <link href="css/sb-admin.css" rel="stylesheet">
     
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <style>
       .navbar {
           overflow: hidden;
@@ -41,7 +46,7 @@
           font-size: 16px;
           color: white;
           text-align: center;
-          padding: 14px 16px;
+          padding: 14px 15px;
           text-decoration: none;
       }
 
@@ -72,7 +77,7 @@
           background-color: #f9f9f9;
           min-width: 160px;
           box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-          z-index: 1;
+          z-index: 100;
       }
 
       .dropdown-content a {
@@ -217,32 +222,32 @@
                             
                             <h3>
                                 
-                                Charity: <div class="navbar">
-                                  <div class="dropdown">
-                                    <button class="dropbtn" onclick="myFunction()">Select 
-                                      <i class="fa fa-caret-down"></i>
-                                    </button>
-                                    <div class="dropdown-content" id="myDropdown">
-                                      <a href="#">Red Cross</a>
-                                      <a href="#">Link 2</a>
-                                      <a href="#">Link 3</a>
-                                    </div>
-                                  </div> 
-                                </div>
+                                Charity: <div>
+                                  <form action="/action_page.php">
+                                    <select name="charity" style="font-size: 15px; margin-top: 10px;" multiple>
+                                      <option value="salvarmy">The Salvation Army</option>
+                                      <option value="habitat">Habitat For Humanity</option>
+                                      <option value="bgca">Boys & Girls Clubs of America</option>
+                                    </select>
+                                    </form>
+                              </div>
                             <h3>
                                 Seller: <input id = "seller" type = "text" name = "seller"> 
                             </h3> 
+
+                            <div>
+                                <h3>
+                                  Quality: <input id = "seller" type = "text" name = "seller"> 
+                                </h3> <!-- Description-->
             
-
-                            <h3>Quality: <input id = "quality" type = "text" name = "quality"></h3>
-
-                            
-              
-                              
-                             <!-- Rating -->
-                             <!--<script>
-=======
-                            <h3>Quality: <input id = "quality" type = "text" name = "quality"></h3> <!-- Rating -->
+                                <h3>
+                                  Date Posted: <input id = "seller" type = "text" name = "seller"> 
+                                </h3>
+                            </div>
+            
+                            <h3>Import Image:</h3>
+                            <input type="file" accept="video/*;capture=camcorder"  id = "image" value="Upload Image" style="margin-bottom: 150px;">
+                           
                              <script>
 
                                   $(document).ready(function () {
@@ -288,17 +293,8 @@
                         </div>
                     </div>
                 </div>
-        
-                <div>
-                    <h4>Description</h4> <!-- Description-->
-            
-                    <ul>
-                        <li>Bad but surprisingly good</li> <!-- Quality -->
-                        <li>4/20/1969</li> <!-- Date Posted -->
-                        
-                    </ul>
-                </div>
-            <p>This is a great starting point for new custom pages.</p>
+      
+
 
         </div>
         <!-- /.container-fluid -->
@@ -353,9 +349,8 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin.min.js"></script>
 
-   
-  
 
   </body>
+
 
 </html>
