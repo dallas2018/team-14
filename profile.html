@@ -270,7 +270,7 @@
 	
 	<!-- pull details of the profile -->
 	<script>
-		var userRef = firebase.database().ref("Users").child(USER.uid);
+		var userRef = firebase.database().ref("Users").child(sessionData.USER.uid);
 		userRef.on("value", function(snapshot){
 			console.log(snapshot.val());
 		}, function(error){
