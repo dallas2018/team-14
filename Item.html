@@ -142,7 +142,7 @@
                             <!--<h1>
                                 Product Name: <input type = "text" name = "product name">
                             </h1>-->
-                            <h2> Pricing: <input type = "text" name = "price"></h2> <!-- Price of Item-->
+                            <h2> Pricing: <input id = "pricing" type = "text" name = "price"></h2> <!-- Price of Item-->
                             
                             <h3>
                                 <!--Item Tags: <input type = "text" name = "item tags"> -->
@@ -154,10 +154,14 @@
                                 </li>
                                 </ol> 
                             <h3>
-                                Seller: <input type = "text" name = "seller"> 
+                                Seller: <input id = "seller" type = "text" name = "seller"> 
                             </h3> <!-- Seller -->
             
-                            <p>Quality: <input type = "text" name = "quality"></p> <!-- Rating -->
+                            <p>Quality: <input id = "quality" type = "text" name = "quality"></p> <!-- Rating -->
+
+                          
+                             <button id = "submit" onclick = "submitClick()" type="button">Click Me!</button>
+
                         </div>
                         <div class="informationBlock price">
                             
@@ -171,7 +175,7 @@
                     <ul>
                         <li>Bad but surprisingly good</li> <!-- Quality -->
                         <li>4/20/1969</li> <!-- Date Posted -->
-            
+                        
                     </ul>
                 </div>
             <p>This is a great starting point for new custom pages.</p>
@@ -227,6 +231,9 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin.min.js"></script>
+
+
+  
 
   </body>
 
