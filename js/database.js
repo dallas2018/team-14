@@ -2,7 +2,7 @@
 //Initiating functions
 //logging in
 function signIn(){
-	var provider = new  firebase.auth.GoogleAuthProvider();
+	var provider = new firebase.auth.GoogleAuthProvider();
 	firebase.auth().signInWithPopup(provider);
 }
 
