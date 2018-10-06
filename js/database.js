@@ -110,4 +110,18 @@ function purchase(pid, sid, pay){
 	prod.set(true);
 }
 
+databaseRef.orderByKey()
+  .once('child_added', function(snapshot) {
+    snapshot.forEach(function(childSnapshot) {
+
+      var childKey = childSnapshot.key;
+      var childData = childSnapshot.val();
+
+      console.log("Key: " + childKey + "; Value: " + childData);
+
+        $('#nameValue').append(childKey);
+		$('#emailValue').append(childData);
+    });
+  });
+
 initFirebaseAuth();
