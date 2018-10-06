@@ -30,7 +30,7 @@
                 <p>Quality: <input id = "quality" type = "text" name = "quality"></p> <!-- Rating -->
             </div>
             <div class="informationBlock price">
-                <h2> Pricing: <input id = "pricingvvar productName = document.getElementById("productName");" type = "text" name = "price"></h2> <!-- Price of Item-->
+                <h2> Pricing: <input id = "pricing" type = "text" name = "price"></h2> <!-- Price of Item-->
             </div>
         </div>
     </div>
@@ -48,8 +48,21 @@
     <input id = "mainText" type="text" name="firstname">
     <input id = "submit" onClick = "submitClick()" type="submit" value="Submit">
 
+    <script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyBQ47SUer-n4xTUIBtFf1NtPAFjAteYYNA",
+        authDomain: "codeforgood-bc151.firebaseapp.com",
+        databaseURL: "https://codeforgood-bc151.firebaseio.com",
+        projectId: "codeforgood-bc151",
+        storageBucket: "codeforgood-bc151.appspot.com",
+        messagingSenderId: "23594376697"
+      };
+      firebase.initializeApp(config);
+    </script>
 
-    
+    <script src="index.js"></script>
     
 </body>
 </html>
