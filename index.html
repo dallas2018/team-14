@@ -5,20 +5,18 @@
   <title>Code For Good</title>
 </head>
 	<body>
-	<button onclick = "googleSignin()">Google Signin</button>
-	<button onclick = "googleSignout()">Google Signout</button>
+	<button onclick = "signIn()">Google Signin</button>
+	<button onclick = "signOut()">Google Signout</button>
 	<script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-app.js"></script>
 	<script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-auth.js"></script>
-
 	<script src="config.js"></script>
+
 	<script>
 	  // Initialize Firebase
-
 	  firebase.initializeApp(config);
-	  var bigOne = document.getElementById("bigOne");
-	  var dbRef = firebase.database().ref("UserTable").child("userId");
-	  dbRef.on('value' , snap => bigOne.innerText = snap.val());
-	  
 	</script>
+	<script src="js/database.js"></script>
+
 	</body>
 </html>
