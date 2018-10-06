@@ -55,3 +55,18 @@ function authStateObserver(user){
 	}	
 }
 
+var mainText = document.getElementById("mainText");
+var submit = document.getElementById("submit");
+
+
+function submitClick(){
+	var firebaseRef = firebase.database().ref().child("Users").push();
+
+	var messageText = mainText.value;
+	
+
+    	firebaseRef.child("Text").set(messageText);
+
+	//("Text").set(messageText);
+}
+
