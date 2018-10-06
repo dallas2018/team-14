@@ -28,7 +28,7 @@ function signOut(){
    .then(function() {
       console.log('Signout Succesfull')
    }, function(error) {
-      console.log('Signout Failed')  
+      console.log('Signout Failed');
    });
 }
 
@@ -82,6 +82,15 @@ function getUserInfo(id, func){ //returns user info of the user
 function setUserInfo(data){
 	var user = firebase.database().ref("Users").child(USER.uid);
 	user.set(data);
+}
+
+//purchasing
+function purchase(pid, sid, pay){
+	var trans = firebase.database().ref("Trans").push(pid, USER.uid, sid, pay);
+	
+	//change sold item to sold
+	var prod = firebase.database().ref("Products").child(sid).child("sold");
+	prod.set(true);
 }
 
 initFirebaseAuth();
