@@ -58,10 +58,14 @@ function authStateObserver(user) {
 			}else{
 				var info = snapshot.val(); //update ui with the array
 				var profilePic = document.getElementById("profilePic");
-				var profile = document.getElementById("Profile");
 				
 				console.log(getProfilePicUrl());
 				profilePic.src = getProfilePicUrl();
+				
+				var name = document.getElementById("P_Name");
+				name.innerText = info.name;
+				var email = document.getElementById("P_email");
+				email.innerText = info.email;
 			}
 						
 		}, function(error){
