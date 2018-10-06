@@ -1,3 +1,5 @@
+//define basic variables
+var USER;
 
 //Initiating functions
 //logging in
@@ -51,35 +53,30 @@ function authStateObserver(user) {
 		});
 		} else { // User is signed out!
 	}
+	
+	USER = user;
 }
 
 //datafunctions
 //get information
-function getCurrentUser(){ //returns user info of the current user
-	//return firebase.auth().currentUser
-}
 
-function getUserInfo(id){ //returns user info of the user
-
+function getUserInfo(id, func){ //returns user info of the user
+	if(id){
+		var user = firebase.database().ref("Users").child(id);
+		user.on("value", func);		
+	}else{
+		var user = firebase.database().ref("Users").child(USER.uid);
+		user.on("value", func);
+	}
 }
 
 function getProductInfo(id){
 	return firebase.database().ref("UserTable");
 }
 
-var mainText = document.getElementById("mainText");
-var submit = document.getElementById("submit");
-
-
-function submitClick(){
-	var firebaseRef = firebase.database().ref().child("Users").push();
-
-	var messageText = mainText.value;
-	
-
-    	firebaseRef.child("Text").set(messageText);
-
-	//("Text").set(messageText);
+function setUserInfo(data){
+	var user = firebase.database().ref("Users").child(USER.uid);
+	user.set(data);
 }
 
 initFirebaseAuth();
