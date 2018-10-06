@@ -9,6 +9,10 @@ html {
   min-height: 100%;
 }
 
+.redBar {
+  background-color: #779499;
+}
+
 body {
   height: 100%;
 }
