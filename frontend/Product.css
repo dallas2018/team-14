@@ -1,0 +1,21 @@
+.itemImage {
+    height: 50vh; 
+    align-content: left;
+    border: 1px solid black;
+    background-color: mintcream;
+}
+
+.headerBlock {
+    display: flex;
+    margin-top: 50px;
+}
+
+.informationBlock {
+    display: flex;
+    margin-left: 100px;
+}
+
+.price {
+    margin-top: 100px;
+}
+
