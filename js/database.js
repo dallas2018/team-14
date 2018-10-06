@@ -6,20 +6,26 @@ var USER;
 function signIn(){
 	var provider = new firebase.auth.GoogleAuthProvider();
 	
-	firebase.auth().signInWithPopup(provider).then(function(result) {
-		var token = result.credential.accessToken;
-		var user = result.user;
+	console.log(USER);
+	if(USER){
+		signOut();
+	}else{
 
-		
-		console.log(token)
-		console.log(user)
-	}).catch(function(error) {
-		var errorCode = error.code;
-		var errorMessage = error.message;
+			firebase.auth().signInWithPopup(provider).then(function(result) {
+			var token = result.credential.accessToken;
+			var user = result.user;
 
-		console.log(error.code)
-		console.log(error.message)
-	});
+			
+			console.log(token)
+			console.log(user)
+		}).catch(function(error) {
+			var errorCode = error.code;
+			var errorMessage = error.message;
+
+			console.log(error.code)
+			console.log(error.message)
+		});
+	}
 }
 
 function signOut(){
@@ -64,12 +70,12 @@ function authStateObserver(user) {
 		
 		//ui changes for when user just logged in
 		var but = document.getElementById("MENU_Logout");
-		but.innerText = "Log In";
-		
+		but.innerText = "Logout";
+		console.log(but);
 	} else { // User is signed out!
 		//ui changes for when user just logged off
 		var but = document.getElementById("MENU_Logout");
-		but.innerText = "Logout";		
+		but.innerText = "Log In";		
 	}
 	
 	USER = user;
