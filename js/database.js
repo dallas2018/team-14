@@ -57,10 +57,19 @@ function authStateObserver(user) {
 			}else{
 				
 			}
+						
 		}, function(error){
 			
 		});
-		} else { // User is signed out!
+		
+		//ui changes for when user just logged in
+		var but = document.getElementByID("MENU_Logout");
+		but.innerText = "Log In";
+		
+	} else { // User is signed out!
+		//ui changes for when user just logged off
+		var but = document.getElementByID("MENU_Logout");
+		but.innerText = "Logout";		
 	}
 	
 	USER = user;
