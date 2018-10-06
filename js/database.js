@@ -1,13 +1,13 @@
 //define basic variables
-var USER;
+sessionStorage.USER;
 
 //Initiating functions
 //logging in
 function signIn(){
 	var provider = new firebase.auth.GoogleAuthProvider();
 	
-	console.log(USER);
-	if(USER){
+	console.log(sessionStorage.USER);
+	if(sessionStorage.USER){
 		signOut();
 	}else{
 
@@ -78,7 +78,7 @@ function authStateObserver(user) {
 		but.innerText = "Log In";		
 	}
 	
-	USER = user;
+	sessionStorage.USER = user;
 }
 
 //datafunctions
