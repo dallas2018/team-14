@@ -41,7 +41,7 @@
           font-size: 16px;
           color: white;
           text-align: center;
-          padding: 14px 16px;
+          padding: 14px 15px;
           text-decoration: none;
       }
 
@@ -218,12 +218,14 @@
                             <h3>
                                 
                                 Charity: <div class="navbar">
+                                  <a href="#home">Home</a>
+                                  <a href="#news">News</a>
                                   <div class="dropdown">
-                                    <button class="dropbtn" onclick="myFunction()">Select 
+                                    <button class="dropbtn" onclick="myFunction()">Dropdown
                                       <i class="fa fa-caret-down"></i>
                                     </button>
                                     <div class="dropdown-content" id="myDropdown">
-                                      <a href="#">Red Cross</a>
+                                      <a href="#">Link 1</a>
                                       <a href="#">Link 2</a>
                                       <a href="#">Link 3</a>
                                     </div>
@@ -234,12 +236,8 @@
                             </h3> 
             
 
-                            <h3>Quality: <input id = "quality" type = "text" name = "quality"></h3>
-
-                            
-              
-                              
-                             <!-- Rating -->
+                            <input type="file" accept="video/*;capture=camcorder">
+                           
                              <!--<script>
 =======
                             <h3>Quality: <input id = "quality" type = "text" name = "quality"></h3> <!-- Rating -->
@@ -353,7 +351,29 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin.min.js"></script>
 
-   
+   <script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropbtn')) {
+
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+</script>
+
   
 
   </body>
