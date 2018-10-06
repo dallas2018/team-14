@@ -18,7 +18,6 @@ function submitClick(){
 	var qualityText = quality.value;
 	var pricingText = pricing.value;
 
-
     firebaseRef.child("Product Name").set(productNameText);
     firebaseRef.child("Product Type").set(itemTagsText);
     firebaseRef.child("Charity Name").set(charityText);
