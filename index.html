@@ -743,7 +743,7 @@
           <h1>Profile</h1>
           <hr>
           <div class = "itemImage">
-            <img src="../../assets/crocs.png" class="itemImage"></img>
+            <img src="../../assets/crocs.png" class="itemImage" id= "profilePic"></img>
             <!-- <table style="width:100%">
               <tr>
                 <th>First Name</th> 
@@ -1487,28 +1487,24 @@
 		var bodyProfile = document.getElementById("Profile");
 		
 		histBut.onclick = function(){
-			console.log("test");
 			bodyItems.style.display = "none";
 			bodyAdd.style.display = "none";
 			bodyProfile.style.display = "none";
 			bodyHistory.style.display ="block";
 		};
 		addBut.onclick = function(){
-			console.log("test");
 			bodyItems.style.display = "none";
 			bodyAdd.style.display = "block";
 			bodyProfile.style.display = "none";
 			bodyHistory.style.display ="none";
 		};	
 		storeBut.onclick = function(){
-			console.log("test");
 			bodyItems.style.display = "block";
 			bodyAdd.style.display = "none";
 			bodyProfile.style.display = "none";
 			bodyHistory.style.display ="none";
 		};
 		profileBut.onclick = function(){
-			console.log("test");
 			bodyItems.style.display = "none";
 			bodyAdd.style.display = "none";
 			bodyProfile.style.display = "block";
