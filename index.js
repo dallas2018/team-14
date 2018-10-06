@@ -9,15 +9,16 @@ var quality = document.getElementById("quality");
 var pricing = document.getElementById("pricing");
 
 function submitClick(){
-	var firebaseRef = firebase.database().ref().child("Users").push();
-
-	firebaseRef.child("text").set("some");
+	var firebaseRef = firebase.database().ref();
+	//console.log()
+	firebaseRef.child("Products").push();
 	//var productNameText = productName.value;
 	//var itemTagsText = itemTags.value;
 	//var charityText = charity.value;
 	var sellerText = seller.value;
 	var qualityText = quality.value;
 	var pricingText = pricing.value;
+	
 
 	//firebaseRef.child("Product Name").set(productNameText);
    // firebaseRef.child("Product Type").set(itemTagsText);
