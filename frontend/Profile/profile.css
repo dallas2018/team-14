@@ -1,0 +1,24 @@
+.itemImage {
+    display: flex;
+    height: 40vh; 
+    align-content: left;    
+}
+
+.headers {
+    display: flex;
+}
+
+.yolo {
+    margin-left: 200px;
+    text-align: justify;
+    justify-content: space-between;
+}
+
+.profileHeaders {
+    margin-bottom: 0px;
+    font-size: 17px;
+}
+
+.actualValue {
+    font-size: 25px;
+}
