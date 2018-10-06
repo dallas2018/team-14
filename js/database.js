@@ -63,12 +63,12 @@ function authStateObserver(user) {
 		});
 		
 		//ui changes for when user just logged in
-		var but = document.getElementByID("MENU_Logout");
+		var but = document.getElementById("MENU_Logout");
 		but.innerText = "Log In";
 		
 	} else { // User is signed out!
 		//ui changes for when user just logged off
-		var but = document.getElementByID("MENU_Logout");
+		var but = document.getElementById("MENU_Logout");
 		but.innerText = "Logout";		
 	}
 	
