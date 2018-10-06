@@ -1,0 +1,18 @@
+.itemImage {
+    height: 40vh; 
+    align-content: left;
+    
+    
+    
+}
+
+.headerBlock {
+    display: flex;
+    margin-top: 50px;
+}
+
+.informationBlock {
+    display: flex;
+    margin-left: 35px;
+}
+
