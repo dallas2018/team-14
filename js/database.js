@@ -8,6 +8,7 @@ function signIn(){
 		var token = result.credential.accessToken;
 		var user = result.user;
 
+		
 		console.log(token)
 		console.log(user)
 	}).catch(function(error) {
@@ -29,6 +30,19 @@ function signOut(){
    });
 }
 
+// Initiate firebase auth.
+function initFirebaseAuth() {
+	firebase.auth().onAuthStateChanged(authStateObserver);
+}
+
+// Triggers when the auth state change for instance when the user signs-in or signs-out.
+function authStateObserver(user) {
+	if (user) { // User is signed in!
+		console.log("test");
+	} else { // User is signed out!
+	}
+}
+
 //datafunctions
 //get information
 function getCurrentUser(){ //returns user info of the current user
@@ -41,18 +55,6 @@ function getUserInfo(id){ //returns user info of the user
 
 function getProductInfo(id){
 	return firebase.database().ref("UserTable");
-}
-
-function authStateObserver(user){
-	if (user) { // User is signed in!
-
-		// We save the Firebase Messaging Device token and enable notifications.
-		saveMessagingDeviceToken();
-	} else { // User is signed out!
-		// Hide user's profile and sign-out button.
-
-		// Show sign-in button.
-	}	
 }
 
 var mainText = document.getElementById("mainText");
@@ -70,3 +72,4 @@ function submitClick(){
 	//("Text").set(messageText);
 }
 
+initFirebaseAuth();
