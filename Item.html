@@ -85,7 +85,7 @@
         <li class="nav-item">
           <a class="nav-link" href="index.html">
             <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Dashboard</span>
+            <span>Store</span>
           </a>
         </li>
         <!--
@@ -160,8 +160,24 @@
                             </h3> <!-- Seller -->
             
                             <p>Quality: <input id = "quality" type = "text" name = "quality"></p> <!-- Rating -->
+                             <script>
+                                  $(document).ready(function () {
+                                    var sellerId = $("#seller").val();
+                                    var pricingId = $("#pricing").val();
+                                    var QualityId = $("#quality").val();
 
-                          
+                                    var param = {lastName: "Doe", firstName: "John"};
+                                    $.ajax({
+                                      url: 'https://jleiphonebook.firebaseio.com/json',
+                                      type: "POST",
+                                      data: param,
+                                      success: function () {
+                                        alert("success");
+                                      }
+                                    });
+                                  });
+                                </script>
+                                                      
                              <button id = "submit" onclick = "submitClick()" type="button">Submit</button>
 
                              <script src="js/index.js"></script>
