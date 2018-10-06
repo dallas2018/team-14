@@ -131,7 +131,7 @@
             <span>Charts</span></a>
         </li> -->
         <li class="nav-item">
-          <a class="nav-link" id="historyBut" href="#History">
+          <a class="nav-link" id="historyBut">
             <i class="fas fa-fw fa-table"></i>
             <span>History</span></a>
         </li>
@@ -233,7 +233,7 @@
 
           </div>
           <!-- /.row -->
-			<div class = "row" id = "History" style = "display: none;">
+			<div class = "row" style = "display: none;">
           <div class="card mb-3">
             <div class="card-header">
               <i class="fas fa-table"></i>
@@ -906,7 +906,6 @@
     </div>
 		
         <div class="container-fluid" style="display:none;" id="History">
-
           <!-- Breadcrumbs-->
           <ol class="breadcrumb">
             <li class="breadcrumb-item">
@@ -1485,6 +1484,7 @@
 		var bodyHistory = document.getElementById("History");
 		var bodyAdd = document.getElementById("AddItem");
 		var bodyProfile = document.getElementById("Profile");
+		
 		histBut.onclick = function(){
 			console.log("test");
 			bodyItems.style.display = "none";

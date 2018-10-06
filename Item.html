@@ -29,6 +29,11 @@
     <!-- Custom styles for this template-->
     <link href="css/sb-admin.css" rel="stylesheet">
     
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
     <style>
       .navbar {
           overflow: hidden;
@@ -72,7 +77,7 @@
           background-color: #f9f9f9;
           min-width: 160px;
           box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-          z-index: 1;
+          z-index: 100;
       }
 
       .dropdown-content a {
@@ -208,26 +213,40 @@
                     <img src="assets/crocs.png" class="itemImage"></img>
                     <div class="informationBlock">
                         <div>
-                            <!--<h1>
+                            <h3>
                                 Product Name: <input type = "text" name = "product name">
-                            </h1>-->
-                            <h3> Pricing: <input id = "pricing" type = "text" name = "price"></h3> <!-- Price of Item-->
+                            </h3>
+
+                            <h3> Pricing: <input id = "pricing" type = "text" name = "price"></h3> 
+                           
                             
                             <h3>
-                                <!--Item Tags: <input type = "text" name = "item tags"> -->
                                 
-                                Charity: </h3><!--<input type = "text" name = "Charity"></h3>--> <!-- Type--> <!-- Charity Name-->
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item">
-                                    <a href="charityName.html">Charity Name</a>
-                                </li>
-                                </ol>
+                                Charity: <div>
+                                  <form action="/action_page.php">
+                                    <select name="charity" style="font-size: 15px; margin-top: 10px;" multiple>
+                                      <option value="redcross">RedCross</option>
+                                      <option value="msf">Doctors Without Borders</option>
+                                      <option value="bgca">Boys & Girls Clubs of America</option>
+                                    </select>
+                                    </form>
+                              </div>
                             <h3>
                                 Seller: <input id = "seller" type = "text" name = "seller"> 
-                            </h3> <!-- Seller -->
+                            </h3> 
+            
 
+                            <h3>Quality: <input id = "quality" type = "text" name = "quality"></h3>
+
+                            
+              
+                              
+                             <!-- Rating -->
+                             <!--<script>
+=======
                             <h3>Quality: <input id = "quality" type = "text" name = "quality"></h3> <!-- Rating -->
                              <script>
+
                                   $(document).ready(function () {
                                     var sellerId = $("#seller").val();
                                     var pricingId = $("#pricing").val();
@@ -336,9 +355,7 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin.min.js"></script>
 
-   
-  
-
   </body>
+
 
 </html>
