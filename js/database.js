@@ -39,8 +39,8 @@ function initFirebaseAuth() {
 function authStateObserver(user) {
 	if (user) { // User is signed in!
 		//check if user is a new user
-		var playersRef = firebase.database("Users").ref(user.uid));
-		console.log
+		//var playersRef = firebase.database("Users").ref(user.uid));
+		//console.log(playersRef);
 	} else { // User is signed out!
 	}
 }
