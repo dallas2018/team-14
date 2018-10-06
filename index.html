@@ -9,6 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="stylesheet" type="text/css" media="screen" href="profile.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="item.css" />
 
     <title>Resale Store</title>
 
@@ -389,8 +390,8 @@
 
         </div>
  
- 
-        <div class="container-fluid" style="display:none;" id="AddItem">
+
+        <div class="container-fluid" style="display:none;" id= "AddItem">
 
           <!-- Breadcrumbs-->
           <ol class="breadcrumb">
@@ -411,30 +412,51 @@
                     <img src="assets/crocs.png" class="itemImage"></img>
                     <div class="informationBlock">
                         <div>
-                            <!--<h1>
+                            <h3>
                                 Product Name: <input type = "text" name = "product name">
-                            </h1>-->
-                            <h2> Pricing: <input id = "pricing" type = "text" name = "price"></h2> <!-- Price of Item-->
+                            </h3>
+
+                            <h3> Pricing: <input id = "pricing" type = "text" name = "price"></h3> 
+                           
                             
                             <h3>
-                                <!--Item Tags: <input type = "text" name = "item tags"> -->
                                 
-                                Charity: </h3><!--<input type = "text" name = "Charity"></h3>--> <!-- Type--> <!-- Charity Name-->
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item">
-                                    <a href="charityName.html">Charity Name</a>
-                                </li>
-                                </ol> 
+                                Charity: <div>
+                                  <form action="/action_page.php">
+                                    <select name="charity" style="font-size: 15px; margin-top: 10px;" multiple>
+                                      <option value="salvarmy">The Salvation Army</option>
+                                      <option value="habitat">Habitat For Humanity</option>
+                                      <option value="bgca">Boys & Girls Clubs of America</option>
+                                    </select>
+                                    </form>
+                              </div>
                             <h3>
                                 Seller: <input id = "seller" type = "text" name = "seller"> 
-                            </h3> <!-- Seller -->
+                            </h3> 
+
+                            <div>
+                                <h3>
+                                  Quality: <input id = "seller" type = "text" name = "seller"> 
+                                </h3> <!-- Description-->
             
-                            <p>Quality: <input id = "quality" type = "text" name = "quality"></p> <!-- Rating -->
+                                <h3>
+                                  Date Posted: <input id = "seller" type = "text" name = "seller"> 
+                                </h3>
+                            </div>
+            
+                            <h3>Import Image:</h3>
+                            <input type="file" accept="video/*;capture=camcorder"  id = "image" value="Upload Image" style="margin-bottom: 150px;">
+                           
                              <script>
+
                                   $(document).ready(function () {
                                     var sellerId = $("#seller").val();
                                     var pricingId = $("#pricing").val();
                                     var QualityId = $("#quality").val();
+
+                                    var a = "Price of Product";
+                                    var b = "Quality of Product (1-10)";
+                                    var c = "Price of Product";
 
                                     var param = {lastName: "Doe", firstName: "John"};
                                     $.ajax({
@@ -470,14 +492,28 @@
                         </div>
                     </div>
                 </div>
-        
+      
+
+
+        </div>
+        <!-- /.container-fluid -->
+
+        <!-- Sticky Footer -->
+        <footer class="sticky-footer">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright © Your Website 2018</span>
+            </div>
+          </div>
+        </footer>
+
       </div>
       <!-- /.content-wrapper -->
 
-	  
-	  
     </div>
-		
+    <!-- /#wrapper -->
+
+	
         <div class="container-fluid" style="display:none;" id="History">
           <!-- Breadcrumbs-->
           <ol class="breadcrumb">
