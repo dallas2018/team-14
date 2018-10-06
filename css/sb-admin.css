@@ -136,7 +136,7 @@ body.fixed-nav.sidebar-toggled #content-wrapper {
 
 .sidebar {
   width: 90px !important;
-  background-color: #212529;
+  background-color: #779499;
   min-height: calc(100vh - 56px);
 }
 
@@ -354,7 +354,7 @@ footer.sticky-footer {
   bottom: 0;
   width: calc(100% - 90px);
   height: 80px;
-  background-color: #e9ecef;
+  background-color: #FFA1A0;
 }
 
 footer.sticky-footer .copyright {
