@@ -39,9 +39,17 @@ function initFirebaseAuth() {
 function authStateObserver(user) {
 	if (user) { // User is signed in!
 		//check if user is a new user
-		//var playersRef = firebase.database("Users").ref(user.uid));
-		//console.log(playersRef);
-	} else { // User is signed out!
+		var playersRef = firebase.database().ref("Users").child(user.uid);
+		playersRef.on("value", function(snapshot){
+			if(snapshot.val() == null){
+				playersRef.set({name: "bob", age: "2"});
+			}else{
+				
+			}
+		}, function(error){
+			
+		});
+		} else { // User is signed out!
 	}
 }
 
