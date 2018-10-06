@@ -11,7 +11,7 @@ var pricing = document.getElementById("pricing");
 function submitClick(){
 	var firebaseRef = firebase.database().ref();
 	//console.log()
-	firebaseRef.child("Products").push();
+	firebaseRef.child("Charity").push();
 	//var productNameText = productName.value;
 	//var itemTagsText = itemTags.value;
 	//var charityText = charity.value;
