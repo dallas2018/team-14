@@ -19,26 +19,12 @@ function submitClick(){
 	var qualityText = quality.value;
 	var pricingText = pricing.value;
 	
-
-	//firebaseRef.child("Product Name").set(productNameText);
-   // firebaseRef.child("Product Type").set(itemTagsText);
-   // firebaseRef.child("Charity Name").set(charityText);
     firebaseRef.child("SellerName").set(sellerText);
     firebaseRef.child("QualityofProduct(1-10)").set(qualityText);
     firebaseRef.child("PriceofProduct").set(pricingText);
  
 }
 
-function getProductInfo(){
-
-	firebaseRef.child("ProductName").set(productNameText);
-    firebaseRef.child("ProductType").set(itemTagsText);
-    firebaseRef.child("CharityName").set(charityText);
-    firebaseRef.child("SellerName").set(sellerText);
-    firebaseRef.child("QualityofProduct(1-10)").set(qualityText);
-    firebaseRef.child("PriceofProduct").set(pricingText);
-
-}
 
 function getProduct(id, func){
 	var product = firebase.database().ref("Products").push();
@@ -63,5 +49,6 @@ function product(pid, func){
 	var description = firebase.database().ref("Product");
 
 }
+
 
 
