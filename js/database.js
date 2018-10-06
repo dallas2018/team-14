@@ -38,7 +38,9 @@ function initFirebaseAuth() {
 // Triggers when the auth state change for instance when the user signs-in or signs-out.
 function authStateObserver(user) {
 	if (user) { // User is signed in!
-		console.log("test");
+		//check if user is a new user
+		var playersRef = firebase.database("Users").ref(user.uid));
+				
 	} else { // User is signed out!
 	}
 }
