@@ -79,10 +79,6 @@ function getUserInfo(id, func){ //returns user info of the user
 	}
 }
 
-function getProductInfo(id){
-	return firebase.database().ref("UserTable");
-}
-
 function setUserInfo(data){
 	var user = firebase.database().ref("Users").child(USER.uid);
 	user.set(data);
