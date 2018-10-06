@@ -46,7 +46,7 @@
           font-size: 16px;
           color: white;
           text-align: center;
-          padding: 14px 16px;
+          padding: 14px 15px;
           text-decoration: none;
       }
 
@@ -225,8 +225,8 @@
                                 Charity: <div>
                                   <form action="/action_page.php">
                                     <select name="charity" style="font-size: 15px; margin-top: 10px;" multiple>
-                                      <option value="redcross">RedCross</option>
-                                      <option value="msf">Doctors Without Borders</option>
+                                      <option value="salvarmy">The Salvation Army</option>
+                                      <option value="habitat">Habitat For Humanity</option>
                                       <option value="bgca">Boys & Girls Clubs of America</option>
                                     </select>
                                     </form>
@@ -235,16 +235,9 @@
                                 Seller: <input id = "seller" type = "text" name = "seller"> 
                             </h3> 
             
-
-                            <h3>Quality: <input id = "quality" type = "text" name = "quality"></h3>
-
-                            
-              
-                              
-                             <!-- Rating -->
-                             <!--<script>
-=======
-                            <h3>Quality: <input id = "quality" type = "text" name = "quality"></h3> <!-- Rating -->
+                            <h3>Import Image:</h3>
+                            <input type="file" accept="video/*;capture=camcorder"  id = "image" value="Upload Image" style="margin-bottom: 50px;">
+                           
                              <script>
 
                                   $(document).ready(function () {
@@ -291,7 +284,7 @@
                     </div>
                 </div>
         
-                <div>
+                <div style="margin-bottom: 150px;">
                     <h4>Description</h4> <!-- Description-->
             
                     <ul>
@@ -300,7 +293,7 @@
                         
                     </ul>
                 </div>
-            <p>This is a great starting point for new custom pages.</p>
+
 
         </div>
         <!-- /.container-fluid -->
@@ -354,6 +347,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin.min.js"></script>
+
 
   </body>
 
