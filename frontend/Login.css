@@ -1,0 +1,18 @@
+
+
+.LoginBlock {
+    /*margin-left: 100px;*/
+    margin-top: 100px;
+    text-align: center;
+    padding: 0px 0px 20px 0px;
+    border: 1px solid black;
+    
+
+}
+
+.subtitle {
+    color: gray;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+
+}
