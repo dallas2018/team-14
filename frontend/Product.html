@@ -5,30 +5,38 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Product Page</title> 
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="Product.css" />
     <link rel="import" href="../assets/crocs.png">
     <script src="main.js"></script>
 </head>
 <body>
 
-    <img src="../assets/crocs.png"></img>
-    <h1>Croc Attack</h1>
-    
-    <h3>Shoes</h3> <!-- Charity Name-->
-    <h3>Some Food Bank</h3> <!-- Charity Name-->
+    <div class="headerBlock">
+        <img src="../assets/crocs.png" class="itemImage"></img>
+        <div class="informationBlock">
+            <div>
+                <h1>Croc Attack</h1>
+                
+                <h3>Shoes - Some Food Bank</h3> <!-- Type--> <!-- Charity Name-->
 
-    <h4>John Doe</h4> <!-- Seller -->
-    <p>Rating: <i>5/10</i></p> <!-- Rating -->
+                <h4>John Doe</h4> <!-- Seller -->
+                <p>Rating: <i>5/10</i></p> <!-- Rating -->
+            </div>
+            <div class="informationBlock price">
+                <h2>$460</h2> <!-- Price of Item-->
+            </div>
+        </div>
+    </div>
 
-    <h2>$460</h2> <!-- Price of Item-->
+    <div>
+        <h4>Description</h4> <!-- Description-->
 
-    <h4>Description</h4> <!-- Description-->
+        <ul>
+            <li>Bad but surprisingly good</li> <!-- Quality -->
+            <li>4/20/1969</li> <!-- Date Posted -->
 
-    <ul>
-        <li>Bad but surprisingly good</li> <!-- Quality -->
-        <li>4/20/1969</li> <!-- Date Posted -->
-
-    </ul>
+        </ul>
+    </div>
 
     <input type="text" name="firstname">
     <input type="submit" value="Submit">
