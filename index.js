@@ -23,20 +23,20 @@ function submitClick(){
 	//firebaseRef.child("Product Name").set(productNameText);
    // firebaseRef.child("Product Type").set(itemTagsText);
    // firebaseRef.child("Charity Name").set(charityText);
-    firebaseRef.child("Seller Name").set(sellerText);
-    firebaseRef.child("Quality of Product (1-10)").set(qualityText);
-    firebaseRef.child("Price of Product").set(pricingText);
+    firebaseRef.child("SellerName").set(sellerText);
+    firebaseRef.child("QualityofProduct(1-10)").set(qualityText);
+    firebaseRef.child("PriceofProduct").set(pricingText);
  
 }
 
 function getProductInfo(){
 
-	firebaseRef.child("Product Name").set(productNameText);
-    firebaseRef.child("Product Type").set(itemTagsText);
-    firebaseRef.child("Charity Name").set(charityText);
-    firebaseRef.child("Seller Name").set(sellerText);
-    firebaseRef.child("Quality of Product (1-10)").set(qualityText);
-    firebaseRef.child("Price of Product").set(pricingText);
+	firebaseRef.child("ProductName").set(productNameText);
+    firebaseRef.child("ProductType").set(itemTagsText);
+    firebaseRef.child("CharityName").set(charityText);
+    firebaseRef.child("SellerName").set(sellerText);
+    firebaseRef.child("QualityofProduct(1-10)").set(qualityText);
+    firebaseRef.child("PriceofProduct").set(pricingText);
 
 }
 
