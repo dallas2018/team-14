@@ -1,22 +1,31 @@
+//define basic variables
+var USER;
 
 //Initiating functions
 //logging in
 function signIn(){
 	var provider = new firebase.auth.GoogleAuthProvider();
 	
-	firebase.auth().signInWithPopup(provider).then(function(result) {
-		var token = result.credential.accessToken;
-		var user = result.user;
+	console.log(USER);
+	if(USER){
+		signOut();
+	}else{
 
-		console.log(token)
-		console.log(user)
-	}).catch(function(error) {
-		var errorCode = error.code;
-		var errorMessage = error.message;
+			firebase.auth().signInWithPopup(provider).then(function(result) {
+			var token = result.credential.accessToken;
+			var user = result.user;
 
-		console.log(error.code)
-		console.log(error.message)
-	});
+			
+			console.log(token)
+			console.log(user)
+		}).catch(function(error) {
+			var errorCode = error.code;
+			var errorMessage = error.message;
+
+			console.log(error.code)
+			console.log(error.message)
+		});
+	}
 }
 
 function signOut(){
@@ -25,48 +34,80 @@ function signOut(){
    .then(function() {
       console.log('Signout Succesfull')
    }, function(error) {
-      console.log('Signout Failed')  
+      console.log('Signout Failed');
    });
+}
+
+// Initiate firebase auth.
+function initFirebaseAuth() {
+	firebase.auth().onAuthStateChanged(authStateObserver);
+}
+
+// Triggers when the auth state change for instance when the user signs-in or signs-out.
+function authStateObserver(user) {
+	if (user) { // User is signed in!
+		//check if user is a new user
+		var playersRef = firebase.database().ref("Users").child(user.uid);
+		playersRef.on("value", function(snapshot){
+			if(snapshot.val() == null){
+				playersRef.set({
+					name: user.displayName, 
+					email: user.email,
+					rating: "0",
+					numOfRatings: "0",
+					comments: {}, //keys are uid of people commenting, comment
+					donations: {}, //keys are cid, amnt
+					pic: getProfilePic()
+					
+				});
+			}else{
+				
+			}
+						
+		}, function(error){
+			
+		});
+		
+		//ui changes for when user just logged in
+		var but = document.getElementById("MENU_Logout");
+		but.innerText = "Logout";
+	} else { // User is signed out!
+		//ui changes for when user just logged off
+		var but = document.getElementById("MENU_Logout");
+		but.innerText = "Log In";		
+	}
+	
+	USER = user;
 }
 
 //datafunctions
 //get information
-function getCurrentUser(){ //returns user info of the current user
-	//return firebase.auth().currentUser
+function getUserInfo(id, func){ //returns user info of the user
+	if(id){
+		var user = firebase.database().ref("Users").child(id);
+		user.on("value", func);		
+	}else{
+		var user = firebase.database().ref("Users").child(USER.uid);
+		user.on("value", func);
+	}
 }
 
-function getUserInfo(id){ //returns user info of the user
-
+function getProfilePic(){
+	return firebase.auth().currentUser.photoURL || '/assets/profile_placeholder.png';
 }
 
-function getProductInfo(id){
-	return firebase.database().ref("UserTable");
+function setUserInfo(data){
+	var user = firebase.database().ref("Users").child(USER.uid);
+	user.set(data);
 }
 
-function authStateObserver(user){
-	if (user) { // User is signed in!
-
-		// We save the Firebase Messaging Device token and enable notifications.
-		saveMessagingDeviceToken();
-	} else { // User is signed out!
-		// Hide user's profile and sign-out button.
-
-		// Show sign-in button.
-	}	
-}
-
-var mainText = document.getElementById("mainText");
-var submit = document.getElementById("submit");
-
-
-function submitClick(){
-	var firebaseRef = firebase.database().ref().child("Users").push();
-
-	var messageText = mainText.value;
+//purchasing
+function purchase(pid, sid, pay){
+	var trans = firebase.database().ref("Trans").push(pid, USER.uid, sid, pay);
 	
-
-    	firebaseRef.child("Text").set(messageText);
-
-	//("Text").set(messageText);
+	//change sold item to sold
+	var prod = firebase.database().ref("Products").child(sid).child("sold");
+	prod.set(true);
 }
 
+initFirebaseAuth();
