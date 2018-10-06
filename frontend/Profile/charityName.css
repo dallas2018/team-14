@@ -3,3 +3,6 @@ itemImage.center {
     margin:0 auto;
 }
 
+.description {
+    text-align: center;
+}
