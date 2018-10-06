@@ -11,6 +11,10 @@
     <link rel="import" href="assets/crocs.png">
     <link rel="stylesheet" type="text/css" media="screen" href="item.css" />
 
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Item</title>
 
     <!-- Bootstrap core CSS-->
@@ -25,6 +29,69 @@
     <!-- Custom styles for this template-->
     <link href="css/sb-admin.css" rel="stylesheet">
     
+    <style>
+      .navbar {
+          overflow: hidden;
+          background-color: #333;
+          font-family: Arial, Helvetica, sans-serif;
+      }
+
+      .navbar a {
+          float: left;
+          font-size: 16px;
+          color: white;
+          text-align: center;
+          padding: 14px 16px;
+          text-decoration: none;
+      }
+
+      .dropdown {
+          float: left;
+          overflow: hidden;
+      }
+
+      .dropdown .dropbtn {
+          cursor: pointer;
+          font-size: 16px;    
+          border: none;
+          outline: none;
+          color: white;
+          padding: 14px 16px;
+          background-color: inherit;
+          font-family: inherit;
+          margin: 0;
+      }
+
+      .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
+          background-color: red;
+      }
+
+      .dropdown-content {
+          display: none;
+          position: absolute;
+          background-color: #f9f9f9;
+          min-width: 160px;
+          box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+          z-index: 1;
+      }
+
+      .dropdown-content a {
+          float: none;
+          color: black;
+          padding: 12px 16px;
+          text-decoration: none;
+          display: block;
+          text-align: left;
+      }
+
+      .dropdown-content a:hover {
+          background-color: #ddd;
+      }
+
+      .show {
+          display: block;
+      }
+      </style>
 
   </head>
 
@@ -145,26 +212,42 @@
                                 Product Name: <input type = "text" name = "product name">
                             </h1>-->
                             <h2> Pricing: <input id = "pricing" type = "text" name = "price"></h2> <!-- Price of Item-->
-                            
-                            <h3>
-                                <!--Item Tags: <input type = "text" name = "item tags"> -->
-                                
-                                Charity: </h3><!--<input type = "text" name = "Charity"></h3>--> <!-- Type--> <!-- Charity Name-->
-                            <ol class="breadcrumb">
+                            <!--<input type = "text" name = "Charity"></h3>--> <!-- Type--> <!-- Charity Name-->
+                            <!--<ol class="breadcrumb">
                                 <li class="breadcrumb-item">
                                     <a href="charityName.html">Charity Name</a>
                                 </li>
-                                </ol> 
+                                </ol>--> 
                             <h3>
                                 Seller: <input id = "seller" type = "text" name = "seller"> 
                             </h3> <!-- Seller -->
             
-                            <p>Quality: <input id = "quality" type = "text" name = "quality"></p> <!-- Rating -->
-                             <script>
+                            <p>Quality: <input id = "quality" type = "text" name = "quality"></p>
+
+                            <div class="navbar">
+                              <div class="dropdown">
+                                <button class="dropbtn" onclick="myFunction()">Charity
+                                  <i class="fa fa-caret-down"></i>
+                                </button>
+                                <div class="dropdown-content" id="myDropdown">
+                                  <a href="#">Red Cross</a>
+                                  <a href="#">Link 2</a>
+                                  <a href="#">Link 3</a>
+                                </div>
+                              </div> 
+                            </div>
+              
+                              
+                             <!-- Rating -->
+                             <!--<script>
                                   $(document).ready(function () {
                                     var sellerId = $("#seller").val();
                                     var pricingId = $("#pricing").val();
                                     var QualityId = $("#quality").val();
+
+                                    var a = "Price of Product";
+                                    var b = "Quality of Product (1-10)";
+                                    var c = "Price of Product";
 
                                     var param = {lastName: "Doe", firstName: "John"};
                                     $.ajax({
@@ -176,7 +259,7 @@
                                       }
                                     });
                                   });
-                                </script>
+                                </script>-->
                                                       
                              <button id = "submit" onclick = "submitClick()" type="button">Submit</button>
 
@@ -265,7 +348,7 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin.min.js"></script>
 
-
+   
   
 
   </body>

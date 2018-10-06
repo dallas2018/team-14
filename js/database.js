@@ -57,7 +57,7 @@ function authStateObserver(user) {
 					numOfRatings: "0",
 					comments: {}, //keys are uid of people commenting, comment
 					donations: {}, //keys are cid, amnt
-					pic: getProfilePic()
+					
 					
 				});
 			}else{
@@ -71,6 +71,7 @@ function authStateObserver(user) {
 		//ui changes for when user just logged in
 		var but = document.getElementById("MENU_Logout");
 		but.innerText = "Logout";
+		console.log(but);
 	} else { // User is signed out!
 		//ui changes for when user just logged off
 		var but = document.getElementById("MENU_Logout");
@@ -82,6 +83,7 @@ function authStateObserver(user) {
 
 //datafunctions
 //get information
+
 function getUserInfo(id, func){ //returns user info of the user
 	if(id){
 		var user = firebase.database().ref("Users").child(id);
@@ -90,10 +92,6 @@ function getUserInfo(id, func){ //returns user info of the user
 		var user = firebase.database().ref("Users").child(USER.uid);
 		user.on("value", func);
 	}
-}
-
-function getProfilePic(){
-	return firebase.auth().currentUser.photoURL || '/assets/profile_placeholder.png';
 }
 
 function setUserInfo(data){
@@ -110,18 +108,6 @@ function purchase(pid, sid, pay){
 	prod.set(true);
 }
 
-databaseRef.orderByKey()
-  .once('child_added', function(snapshot) {
-    snapshot.forEach(function(childSnapshot) {
 
-      var childKey = childSnapshot.key;
-      var childData = childSnapshot.val();
-
-      console.log("Key: " + childKey + "; Value: " + childData);
-
-        $('#nameValue').append(childKey);
-		$('#emailValue').append(childData);
-    });
-  });
 
 initFirebaseAuth();
