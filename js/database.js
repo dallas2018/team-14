@@ -57,7 +57,7 @@ function authStateObserver(user) {
 					numOfRatings: "0",
 					comments: {}, //keys are uid of people commenting, comment
 					donations: {}, //keys are cid, amnt
-					
+					pic: getProfilePic()
 					
 				});
 			}else{
@@ -93,7 +93,7 @@ function getUserInfo(id, func){ //returns user info of the user
 }
 
 function getProfilePic(){
-	return firebase.auth().currentUser.photoURL || '/images/profile_placeholder.png';
+	return firebase.auth().currentUser.photoURL || '/assets/profile_placeholder.png';
 }
 
 function setUserInfo(data){
