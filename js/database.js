@@ -44,7 +44,16 @@ function authStateObserver(user) {
 		var playersRef = firebase.database().ref("Users").child(user.uid);
 		playersRef.on("value", function(snapshot){
 			if(snapshot.val() == null){
-				playersRef.set({name: "bob", age: "2"});
+				playersRef.set({
+					name: user.displayName, 
+					email: user.email,
+					rating: "0",
+					numOfRatings: "0",
+					comments: {}, //keys are uid of people commenting, comment
+					donations: {}, //keys are cid, amnt
+					
+					
+				});
 			}else{
 				
 			}
