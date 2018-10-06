@@ -27,7 +27,20 @@
   </head>
 
   <body id="page-top">
+	<script src="https://www.gstatic.com/firebasejs/5.5.3/firebase.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.5.3/firebase-database.js"></script>
+	<script src="config.js"></script>
 
+	<script>
+	  // Initialize Firebase
+	  firebase.initializeApp(config);
+	</script>
+	<script src="js/database.js"></script>
+	<script src="js/database2.js"></script>
+	<script src="js/index.js"></script>
+	
     <nav class="navbar navbar-expand navbar-dark bg-dark static-top">
 
       <a class="navbar-brand mr-1" href="index.html">United Resale</a>
@@ -69,7 +82,7 @@
           <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
             <a class="dropdown-item" href="#">Profile</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">Logout</a>
+            <a class="dropdown-item"  id="MENU_Logout" href="#" onclick="signIn()">Logout</a>
           </div>
         </li>
       </ul>
@@ -86,6 +99,7 @@
             <span>Dashboard</span>
           </a>
         </li>
+        <!--
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="pagesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-fw fa-folder"></i>
@@ -102,6 +116,7 @@
             <a class="dropdown-item active" href="blank.html">Blank Page</a>
           </div>
         </li>
+      -->
         <!-- <li class="nav-item">
           <a class="nav-link" href="charts.html">
             <i class="fas fa-fw fa-chart-area"></i>
@@ -162,43 +177,43 @@
           </div>
         
           <div class="bar-title">
-            <h3>This is the title of the Graph</h3>
+            <h3>Your Contributions to Charities This Year</h3>
           </div>
 
           <ul class="bar-graph">
               <li class="bar-graph-axis">
-                <div class="bar-graph-label">100%</div>
-                <div class="bar-graph-label">80%</div>
-                <div class="bar-graph-label">60%</div>
-                <div class="bar-graph-label">40%</div>
-                <div class="bar-graph-label">20%</div>
-                <div class="bar-graph-label">0%</div>
+                <div class="bar-graph-label">$500</div>
+                <div class="bar-graph-label">$400</div>
+                <div class="bar-graph-label">$300</div>
+                <div class="bar-graph-label">$200</div>
+                <div class="bar-graph-label">$100</div>
+                <div class="bar-graph-label">$0</div>
               </li>
               <li class="bar primary" style="height: 95%;" title="95">
                 <div class="percent">95<span>%</span></div>
-                <div class="description">Yetis</div>
+                <div class="description">United Way of Dallas</div>
               </li>
               <li class="bar secondary" style="height: 90%;" title="90">
                 <div class="percent">90<span>%</span></div>
-                <div class="description">ZURBians</div>
+                <div class="description">Helen Keller International</div>
               </li>
               <li class="bar success" style="height: 80%;" title="80">
                 <div class="percent">80<span>%</span></div>
-                <div class="description">Cows</div>
+                <div class="description">The Carter Center</div>
               </li>
               <li class="bar warning" style="height: 75%;" title="75">
                 <div class="percent">75<span>%</span></div>
-                <div class="description">Cows that think they're Yetis</div>
+                <div class="description">MAP International</div>
               </li>
               <li class="bar alert" style="height: 40%;" title="40">
                 <div class="percent">40<span>%</span></div>
-                <div class="description">Who knows</div>
+                <div class="description">Cancer Research Institute</div>
               </li>
             </ul>
             
             
           <div class="xAxis">
-              <h5>x-axis</h5>
+              <h5>Charities</h5>
           </div>
   
 
@@ -225,7 +240,7 @@
       <i class="fas fa-angle-up"></i>
     </a>
 
-    <!-- Logout Modal-->
+    <!-- Logout Modal
     <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -243,6 +258,7 @@
         </div>
       </div>
     </div>
+	-->
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -253,7 +269,16 @@
 
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin.min.js"></script>
-
+	
+	<!-- pull details of the profile -->
+	<script>
+		var userRef = firebase.database().ref("Users").child(USER.uid);
+		userRef.on("value", function(snapshot){
+			console.log(snapshot.val());
+		}, function(error){
+		
+		});
+	</script>
   </body>
 
 </html>
